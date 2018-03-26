@@ -1,0 +1,54 @@
+//==============================================
+// Vendor/Build mobile first grid system
+//==============================================
+
+// Can be edited
+
+// Container
+@if $responsive-app
+  .container
+    +container-fixed
+
+    @media (min-width: $screen-sm-min)
+      width: $container-sm
+
+    @media (min-width: $screen-md-min)
+      width: $container-md
+
+    @media (min-width: $screen-lg-min)
+      width: $container-lg
+@else
+  .container
+    +container-fixed
+
+    width: $container-lg
+
+.container-wide
+  +container-fixed
+
+  max-width: $screen-lg-max
+
+.container-fluid
+  +container-fixed
+
+.row
+  +make-row
+
+@if $responsive-app
+  +make-grid-columns
+
+// Extra small grid
++make-grid(xs)
+
+@if $responsive-app
+  // Small grid
+  @media (min-width: $screen-sm-min)
+    +make-grid(sm)
+
+  // Medium grid
+  @media (min-width: $screen-md-min)
+    +make-grid(md)
+
+  // Large grid
+  @media (min-width: $screen-lg-min)
+    +make-grid(lg)
