@@ -37,7 +37,7 @@ const unCssIgnore = [
 
 gulp.task('css', () =>
   gulp
-    .src(path.join(config.root.dev, config.css.dev, 'bundle.scss'))
+    .src(path.join(config.root.dev, config.css.dev, 'bundle.sass'))
     .pipe(gulpif(!mode.production, sourcemaps.init()))
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sass({
